@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion NSS SPACE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #fff;
+    }
+
+    .container {
+      display: flex;
+      width: 90%;
+      max-width: 1100px;
+      height: 90vh;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border-radius: 50px;
+      overflow: hidden;
+    }
+
+    .left-panel {
+      width: 40%;
+      background: #004d99 url('https://www.transparenttextures.com/patterns/stardust.png');
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      border-top-left-radius: 50px;
+      border-bottom-left-radius: 50px;
+      background-size: cover;
+    }
+
+    .left-panel img.logo {
+      width: 150px;
+      margin-bottom: 2rem;
+    }
+
+    .left-panel h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .input-container {
+      width: 100%;
+      max-width: 400px;
+      position: relative;
+    }
+
+    .input-container input {
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+    }
+
+    .password-wrapper {
+      position: relative;
+    }
+
+    .toggle-password {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .forgot-password {
+      font-size: 0.9rem;
+      color: #ccc;
+      text-align: right;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      padding: 15px;
+      width: 100%;
+      background: #001f4d;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .right-panel {
+      width: 60%;
+      position: relative;
+    }
+
+    .right-panel::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('images/vehi.jpg') no-repeat center center;
+      background-size: cover;
+      z-index: 0;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.6);
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <img src="images/logo.png" alt="NSS Logo" class="logo">
+      <h1>CONNEXION</h1>
+      <div class="input-container">
+        <input type="text" placeholder="NOM D'UTILISATEUR / USER NAME">
+        <div class="password-wrapper">
+          <input type="password" placeholder="MOT DE PASSE / PASSWORD" id="password">
+          <span class="toggle-password" onclick="togglePassword()">👁️</span>
+        </div>
+        <div class="forgot-password">MOT DE PASSE OUBLIEZ / FORGOT PASSWORD</div>
+        <button class="btn">CONNEXION</button>
+      </div>
+    </div>
+    <div class="right-panel">
+      <div class="overlay"></div>
+    </div>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const passwordInput = document.getElementById('password');
+      const toggle = document.querySelector('.toggle-password');
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggle.textContent = '🙈';
+      } else {
+        passwordInput.type = 'password';
+        toggle.textContent = '👁️';
+      }
+    }
+  </script>
+</body>
+</html>
