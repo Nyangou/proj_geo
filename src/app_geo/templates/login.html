@@ -24,6 +24,7 @@
 
     .container {
       display: flex;
+      flex-direction: row;
       width: 90%;
       max-width: 1100px;
       height: 90vh;
@@ -44,32 +45,33 @@
       border-top-left-radius: 50px;
       border-bottom-left-radius: 50px;
       background-size: cover;
+      text-align: center;
     }
 
     .logo-wrapper {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
       background-color: white;
+      border-radius: 50%;
+      padding: 15px;
+      margin-bottom: 1.5rem;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-bottom: 2rem;
     }
 
     .left-panel img.logo {
       width: 100px;
+      height: auto;
+      border-radius: 50%;
     }
 
     .left-panel h1 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
     }
 
     .input-container {
       width: 100%;
       max-width: 400px;
-      position: relative;
     }
 
     .input-container input {
@@ -143,6 +145,31 @@
       width: 100%;
       background: rgba(255, 255, 255, 0.6);
       z-index: 1;
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        height: auto;
+        border-radius: 20px;
+      }
+
+      .left-panel, .right-panel {
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+      }
+
+      .left-panel {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+      }
+
+      .right-panel {
+        height: 300px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+      }
     }
   </style>
 </head>
